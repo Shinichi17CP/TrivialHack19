@@ -25,15 +25,14 @@ public class Website extends HttpServlet {
         endTime = LocalTime.now();
         
         String purpose = req.getParameter("purpose");
-        if (purpose == null) {
+        if (purpose == null || purpose.equals("result")) {
             new IndexPage().writeTo(resp);
-        } else if (purpose.equals("main")) {
-            play(resp);
         } else if (purpose.equals("question")) {
             nextQuestion(req, resp);
         } else {
             newGame(resp);
         }
+        
         startTime = LocalTime.now();
     }
     
@@ -41,7 +40,7 @@ public class Website extends HttpServlet {
         questionsAnswered = 0;
         score = 0;
         questionGen.reset();
-        new IndexPage().writeTo(resp);
+        play(resp);
     }
     
     private void nextQuestion(HttpServletRequest req, HttpServletResponse resp)
