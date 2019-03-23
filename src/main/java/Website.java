@@ -25,24 +25,32 @@ public class Website extends HttpServlet {
         endTime = LocalTime.now();
         
         String purpose = req.getParameter("purpose");
-        if (purpose == null) {
-            new IndexPage().writeTo(resp);
+        if (purpose == null || purpose.equals("result")) {
+           newGame(resp);
         } else if (purpose.equals("main")) {
             play(resp);
-        } else if (purpose.equals("question")) {
-            questionsAnswered++;
-            calculateScore(req);
-
-            if (questionsAnswered < maxQuestions)
-                play(resp);
-            else
-                new ResultPage().writeTo(resp, score);
         } else {
-            questionsAnswered = 0;
-            score = 0;
-            new IndexPage().writeTo(resp);
+            nextQuestion(req, resp);
         }
         startTime = LocalTime.now();
+    }
+    
+    private void newGame(HttpServletResponse resp) throws IOException {
+        questionsAnswered = 0;
+        score = 0;
+        questionGen.reset();
+        new IndexPage().writeTo(resp);
+    }
+    
+    private void nextQuestion(HttpServletRequest req, HttpServletResponse resp)
+        throws IOException {
+        questionsAnswered++;
+        calculateScore(req);
+        
+        if (questionsAnswered < maxQuestions)
+            play(resp);
+        else
+            new ResultPage().writeTo(resp, score);
     }
     
     private void calculateScore(HttpServletRequest req) {

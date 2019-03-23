@@ -41,4 +41,8 @@ public class QuestionGenerator {
         List<String> wrongOptions = answers.subList(1, answers.size());
         return new Question(question, answers.get(0), wrongOptions);
     }
+    
+    public void reset() {
+        usedQuestions = new HashMap<>();
+    }
 }
