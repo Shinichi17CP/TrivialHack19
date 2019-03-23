@@ -25,12 +25,14 @@ public class Website extends HttpServlet {
         endTime = LocalTime.now();
         
         String purpose = req.getParameter("purpose");
-        if (purpose == null || purpose.equals("result")) {
-           newGame(resp);
+        if (purpose == null) {
+            new IndexPage().writeTo(resp);
         } else if (purpose.equals("main")) {
             play(resp);
-        } else {
+        } else if (purpose.equals("question")) {
             nextQuestion(req, resp);
+        } else {
+            newGame(resp);
         }
         startTime = LocalTime.now();
     }
