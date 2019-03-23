@@ -38,7 +38,7 @@ public class QuestionGenerator {
         
         String question = questionsTable.get(questionIndex);
         List<String> answers = database.getAnswers(sponsorCategory, questionIndex);
-        List<String> wrongOptions = answers.subList(1, answers.size() - 1);
+        List<String> wrongOptions = answers.subList(1, answers.size());
         return new Question(question, answers.get(0), wrongOptions);
     }
 }

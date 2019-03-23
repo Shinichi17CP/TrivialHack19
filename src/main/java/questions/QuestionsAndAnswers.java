@@ -93,7 +93,7 @@ public class QuestionsAndAnswers {
             + "sticker?"));
     
     List<List<String>> visaAnswers = new ArrayList<>(Arrays.asList(
-        new ArrayList<>(Arrays.asList("nothing",
+        new ArrayList<>(Arrays.asList("Nothing",
         "VISA International Service Association",
         "Very Interesting Savings Account",
         "VISA International Service Account")),
@@ -114,8 +114,8 @@ public class QuestionsAndAnswers {
         "Distributing Ledger Technology")),
         new ArrayList<>(Arrays.asList("Applying distributed ledger "
             + "technologies across all industries",
-            "blockchain stuff", "manages financial assets",
-            "runs a successful Ecommerce business on a platform")),
+            "Blockchain stuff", "Manages financial assets",
+            "Runs a successful Ecommerce business on a platform")),
         new ArrayList<>(Arrays.asList("Paddington, London", "Picadilly, London",
             "Shoreditch, London", "Brighton"))));
     
@@ -209,7 +209,7 @@ public class QuestionsAndAnswers {
         "RockBlack",
         "BlackRock Financial Management")),
         new ArrayList<>(Arrays.asList
-        (" 228.1 million", "100,000", "501.8 million", "none")),
+        (" 228.1 million", "100,000", "501.8 million", "None")),
         new ArrayList<>(Arrays.asList("1988", "1998", "1976", "1965"))));
     
     // IMPROBABLE
@@ -259,10 +259,11 @@ public class QuestionsAndAnswers {
         "When was Palantir founded?",
         "Where is the Palantir Headquarters?"));
     
-    List<List<String>> palantirAnswers = new ArrayList<>(Arrays.asList(new ArrayList<>(Arrays.asList("a seeing stone that lets you see " +
-            "what's happening in lands far off",
-        "a meteorite", "a crystal tiara",
-        "a mirror that lets you see what's " +
+    List<List<String>> palantirAnswers = new ArrayList<>(Arrays.asList(new
+            ArrayList<>(Arrays.asList("A seeing stone that lets you see " +
+            "What's happening in lands far off",
+        "A meteorite", "A crystal tiara",
+        "A mirror that lets you see what's " +
             "happening in lands far off")),
         new ArrayList<>(Arrays.asList("2004", "2005", "2010", "1999")),
         new ArrayList<>(Arrays.asList("Palo Alto, California", "LA, California",
